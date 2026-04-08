@@ -1,0 +1,38 @@
+{
+  "created": 1775613083.5503333,
+  "duration": 2.615320920944214,
+  "exitcode": 5,
+  "root": "C:\\projeto_qualidade_de_sofware\\pokeapi_tests",
+  "environment": {},
+  "summary": {
+    "total": 0,
+    "collected": 0
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_performance.py",
+          "type": "Module"
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_performance.py",
+      "outcome": "passed",
+      "result": []
+    }
+  ],
+  "tests": [],
+  "warnings": [
+    {
+      "message": "Monkey-patching ssl after ssl has already been imported may lead to errors, including RecursionError on Python 3.6. It may also silently lead to incorrect behaviour on Python 3.7. Please monkey-patch earlier. See https://github.com/gevent/gevent/issues/1016. Modules that had direct imports (NOT patched): ['urllib3.util.ssl_ (C:\\\\Python310\\\\lib\\\\site-packages\\\\urllib3\\\\util\\\\ssl_.py)', 'urllib3.util (C:\\\\Python310\\\\lib\\\\site-packages\\\\urllib3\\\\util\\\\__init__.py)']. ",
+      "category": "MonkeyPatchWarning",
+      "when": "collect",
+      "filename": "C:\\Python310\\lib\\site-packages\\locust\\__init__.py",
+      "lineno": 16
+    }
+  ]
+}

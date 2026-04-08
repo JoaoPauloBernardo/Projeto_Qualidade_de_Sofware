@@ -1,0 +1,27 @@
+"""
+conftest.py — Fixtures compartilhadas para a suíte PokéAPI
+"""
+import pytest
+import requests
+
+BASE_URL = "https://pokeapi.co/api/v2"
+TIMEOUT  = 10  # segundos
+
+
+@pytest.fixture(scope="session")
+def base_url():
+    return BASE_URL
+
+
+@pytest.fixture(scope="session")
+def timeout():
+    return TIMEOUT
+
+
+@pytest.fixture(scope="session")
+def session():
+    """Sessão HTTP reutilizada por todos os testes (melhora performance)."""
+    s = requests.Session()
+    s.headers.update({"Accept": "application/json"})
+    yield s
+    s.close()
