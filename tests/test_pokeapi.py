@@ -13,6 +13,8 @@ Casos de teste:
 """
 
 import time
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 import pytest
 import requests
 
@@ -50,7 +52,7 @@ class TestCaminhoFeliz:
 
     def test_TC001_busca_pokemon_por_id_valido(self):
         """TC-001: GET /pokemon/1 deve retornar HTTP 200 com id=1 e name='bulbasaur'."""
-        response = requests.get(f"{BASE_URL}/pokemon/{VALID_POKEMON_ID}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/pokemon/{VALID_POKEMON_ID}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200, (
             f"TC-001 FALHOU: esperado 200, recebido {response.status_code}"
@@ -63,7 +65,7 @@ class TestCaminhoFeliz:
 
     def test_TC002_busca_pokemon_por_nome_valido(self):
         """TC-002: GET /pokemon/pikachu deve retornar HTTP 200 com id=25."""
-        response = requests.get(f"{BASE_URL}/pokemon/{VALID_POKEMON_NAME}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/pokemon/{VALID_POKEMON_NAME}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200
         data = response.json()
@@ -74,7 +76,7 @@ class TestCaminhoFeliz:
 
     def test_TC003_pokemon_id_limite_maximo(self):
         """TC-003: GET /pokemon/1025 (valor-limite máximo) deve retornar HTTP 200."""
-        response = requests.get(f"{BASE_URL}/pokemon/{MAX_POKEMON_ID}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/pokemon/{MAX_POKEMON_ID}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200, (
             f"TC-003 FALHOU: ID {MAX_POKEMON_ID} deve existir, recebido {response.status_code}"
@@ -85,7 +87,7 @@ class TestCaminhoFeliz:
     def test_TC004_listagem_paginada_padrao(self):
         """TC-004: GET /pokemon?limit=10&offset=0 deve retornar 10 resultados."""
         response = requests.get(
-            f"{BASE_URL}/pokemon", params={"limit": 10, "offset": 0}, timeout=TIMEOUT
+            f"{BASE_URL}/pokemon", params={"limit": 10, "offset": 0}, timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 200
@@ -100,7 +102,7 @@ class TestCaminhoFeliz:
     def test_TC005_paginacao_com_offset_no_meio(self):
         """TC-005: GET /pokemon?limit=5&offset=20 deve retornar 5 itens com offset correto."""
         response = requests.get(
-            f"{BASE_URL}/pokemon", params={"limit": 5, "offset": 20}, timeout=TIMEOUT
+            f"{BASE_URL}/pokemon", params={"limit": 5, "offset": 20}, timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 200
@@ -113,7 +115,7 @@ class TestCaminhoFeliz:
 
     def test_TC006_consulta_tipo_por_nome(self):
         """TC-006: GET /type/fire deve retornar HTTP 200 com name='fire'."""
-        response = requests.get(f"{BASE_URL}/type/{VALID_TYPE}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/type/{VALID_TYPE}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200
         data = response.json()
@@ -124,7 +126,7 @@ class TestCaminhoFeliz:
 
     def test_TC007_consulta_habilidade_por_nome(self):
         """TC-007: GET /ability/overgrow deve retornar HTTP 200 com name='overgrow'."""
-        response = requests.get(f"{BASE_URL}/ability/{VALID_ABILITY}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/ability/{VALID_ABILITY}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200
         data = response.json()
@@ -134,7 +136,7 @@ class TestCaminhoFeliz:
 
     def test_TC008_consulta_movimento_por_nome(self):
         """TC-008: GET /move/tackle deve retornar HTTP 200 com campos obrigatórios."""
-        response = requests.get(f"{BASE_URL}/move/{VALID_MOVE}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/move/{VALID_MOVE}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 200
         data = response.json()
@@ -146,7 +148,7 @@ class TestCaminhoFeliz:
     def test_TC009_consulta_geracao_valida(self):
         """TC-009: GET /generation/1 deve retornar HTTP 200 com name='generation-i'."""
         response = requests.get(
-            f"{BASE_URL}/generation/{VALID_GENERATION}", timeout=TIMEOUT
+            f"{BASE_URL}/generation/{VALID_GENERATION}", timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 200
@@ -160,7 +162,7 @@ class TestCaminhoFeliz:
     def test_TC010_tempo_de_resposta_aceitavel(self):
         """TC-010: GET /pokemon/25 deve responder em menos de 3 segundos."""
         inicio = time.time()
-        response = requests.get(f"{BASE_URL}/pokemon/25", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/pokemon/25", timeout=TIMEOUT, verify=False)
         elapsed = time.time() - inicio
 
         assert response.status_code == 200, "TC-010: deve retornar HTTP 200"
@@ -180,7 +182,7 @@ class TestDadosInvalidos:
     def test_TC011_id_pokemon_inexistente(self):
         """TC-011: GET /pokemon/99999 (ID além do limite) deve retornar HTTP 404."""
         response = requests.get(
-            f"{BASE_URL}/pokemon/{INVALID_POKEMON_ID}", timeout=TIMEOUT
+            f"{BASE_URL}/pokemon/{INVALID_POKEMON_ID}", timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 404, (
@@ -192,7 +194,7 @@ class TestDadosInvalidos:
     def test_TC012_nome_pokemon_inexistente(self):
         """TC-012: GET /pokemon/naoexiste deve retornar HTTP 404."""
         response = requests.get(
-            f"{BASE_URL}/pokemon/{INVALID_POKEMON_NAME}", timeout=TIMEOUT
+            f"{BASE_URL}/pokemon/{INVALID_POKEMON_NAME}", timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 404, (
@@ -201,7 +203,7 @@ class TestDadosInvalidos:
 
     def test_TC013_id_zero_fora_do_dominio(self):
         """TC-013: GET /pokemon/0 (valor-limite abaixo do mínimo) deve retornar HTTP 404."""
-        response = requests.get(f"{BASE_URL}/pokemon/{ZERO_ID}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/pokemon/{ZERO_ID}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 404, (
             f"TC-013 FALHOU: ID 0 está fora do domínio válido (1–1025), "
@@ -211,7 +213,7 @@ class TestDadosInvalidos:
     def test_TC014_id_negativo(self):
         """TC-014: GET /pokemon/-1 (ID negativo) deve retornar HTTP 404."""
         response = requests.get(
-            f"{BASE_URL}/pokemon/{NEGATIVE_ID}", timeout=TIMEOUT
+            f"{BASE_URL}/pokemon/{NEGATIVE_ID}", timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 404, (
@@ -223,7 +225,7 @@ class TestDadosInvalidos:
     def test_TC015_paginacao_limit_zero(self):
         """TC-015: GET /pokemon?limit=0 — comportamento com limit inválido."""
         response = requests.get(
-            f"{BASE_URL}/pokemon", params={"limit": 0}, timeout=TIMEOUT
+            f"{BASE_URL}/pokemon", params={"limit": 0}, timeout=TIMEOUT, verify=False
         )
 
         # A API pode retornar 400 (inválido) ou 200 com lista vazia — ambos aceitáveis
@@ -239,7 +241,7 @@ class TestDadosInvalidos:
     def test_TC016_paginacao_offset_negativo(self):
         """TC-016: GET /pokemon?limit=10&offset=-5 — offset negativo é dado inoportuno."""
         response = requests.get(
-            f"{BASE_URL}/pokemon", params={"limit": 10, "offset": -5}, timeout=TIMEOUT
+            f"{BASE_URL}/pokemon", params={"limit": 10, "offset": -5}, timeout=TIMEOUT, verify=False
         )
 
         # A API pode tratar graciosamente (200) ou rejeitar (400) — sem 500
@@ -250,7 +252,7 @@ class TestDadosInvalidos:
 
     def test_TC017_tipo_pokemon_inexistente(self):
         """TC-017: GET /type/fogo — tipo em português não existe na API (inglês apenas)."""
-        response = requests.get(f"{BASE_URL}/type/{INVALID_TYPE}", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/type/{INVALID_TYPE}", timeout=TIMEOUT, verify=False)
 
         assert response.status_code == 404, (
             f"TC-017 FALHOU: tipo '{INVALID_TYPE}' não existe, "
@@ -260,7 +262,7 @@ class TestDadosInvalidos:
     def test_TC018_geracao_alem_do_limite(self):
         """TC-018: GET /generation/10 — apenas gerações 1-9 existem."""
         response = requests.get(
-            f"{BASE_URL}/generation/{INVALID_GENERATION}", timeout=TIMEOUT
+            f"{BASE_URL}/generation/{INVALID_GENERATION}", timeout=TIMEOUT, verify=False
         )
 
         assert response.status_code == 404, (
@@ -271,7 +273,7 @@ class TestDadosInvalidos:
     def test_TC019_limit_com_valor_string(self):
         """TC-019: GET /pokemon?limit=abc — parâmetro com tipo errado (string em vez de int)."""
         response = requests.get(
-            f"{BASE_URL}/pokemon", params={"limit": "abc"}, timeout=TIMEOUT
+            f"{BASE_URL}/pokemon", params={"limit": "abc"}, timeout=TIMEOUT, verify=False
         )
 
         # Aceita 400 (rejeição explícita) ou 200 (ignorou e usou padrão) — sem 500
@@ -289,7 +291,7 @@ class TestDadosInvalidos:
         desconhecidas — comportamento válido e mais restritivo que um 404.
         Ambos os códigos indicam erro do cliente e ausência de erro interno.
         """
-        response = requests.get(f"{BASE_URL}/naoexiste/rota", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/naoexiste/rota", timeout=TIMEOUT, verify=False)
 
         assert response.status_code in (400, 404), (
             f"TC-020 FALHOU: esperado 400 ou 404, recebido {response.status_code}"

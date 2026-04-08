@@ -1,12 +1,13 @@
 {
-  "created": 1775613083.5503333,
-  "duration": 2.615320920944214,
-  "exitcode": 5,
+  "created": 1775692385.1134288,
+  "duration": 5.091044664382935,
+  "exitcode": 0,
   "root": "C:\\projeto_qualidade_de_sofware\\pokeapi_tests",
   "environment": {},
   "summary": {
-    "total": 0,
-    "collected": 0
+    "passed": 20,
+    "total": 20,
+    "collected": 20
   },
   "collectors": [
     {
@@ -14,25 +15,780 @@
       "outcome": "passed",
       "result": [
         {
-          "nodeid": "tests/test_performance.py",
+          "nodeid": "tests/test_pokeapi.py",
           "type": "Module"
         }
       ]
     },
     {
-      "nodeid": "tests/test_performance.py",
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz",
       "outcome": "passed",
-      "result": []
+      "result": [
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC001_busca_pokemon_por_id_valido",
+          "type": "Function",
+          "lineno": 52
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC002_busca_pokemon_por_nome_valido",
+          "type": "Function",
+          "lineno": 65
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC003_pokemon_id_limite_maximo",
+          "type": "Function",
+          "lineno": 76
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC004_listagem_paginada_padrao",
+          "type": "Function",
+          "lineno": 86
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC005_paginacao_com_offset_no_meio",
+          "type": "Function",
+          "lineno": 101
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC006_consulta_tipo_por_nome",
+          "type": "Function",
+          "lineno": 115
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC007_consulta_habilidade_por_nome",
+          "type": "Function",
+          "lineno": 126
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC008_consulta_movimento_por_nome",
+          "type": "Function",
+          "lineno": 136
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC009_consulta_geracao_valida",
+          "type": "Function",
+          "lineno": 147
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC010_tempo_de_resposta_aceitavel",
+          "type": "Function",
+          "lineno": 161
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC011_id_pokemon_inexistente",
+          "type": "Function",
+          "lineno": 181
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC012_nome_pokemon_inexistente",
+          "type": "Function",
+          "lineno": 193
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC013_id_zero_fora_do_dominio",
+          "type": "Function",
+          "lineno": 203
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC014_id_negativo",
+          "type": "Function",
+          "lineno": 212
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC015_paginacao_limit_zero",
+          "type": "Function",
+          "lineno": 224
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC016_paginacao_offset_negativo",
+          "type": "Function",
+          "lineno": 240
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC017_tipo_pokemon_inexistente",
+          "type": "Function",
+          "lineno": 252
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC018_geracao_alem_do_limite",
+          "type": "Function",
+          "lineno": 261
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC019_limit_com_valor_string",
+          "type": "Function",
+          "lineno": 272
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC020_endpoint_completamente_inexistente",
+          "type": "Function",
+          "lineno": 286
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz",
+          "type": "Class"
+        },
+        {
+          "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos",
+          "type": "Class"
+        }
+      ]
     }
   ],
-  "tests": [],
+  "tests": [
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC001_busca_pokemon_por_id_valido",
+      "lineno": 52,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC001_busca_pokemon_por_id_valido",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023310002870857716,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22096950002014637,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023470004089176655,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC002_busca_pokemon_por_nome_valido",
+      "lineno": 65,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC002_busca_pokemon_por_nome_valido",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020370003767311573,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.19966859999112785,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020919996313750744,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC003_pokemon_id_limite_maximo",
+      "lineno": 76,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC003_pokemon_id_limite_maximo",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00017749995458871126,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.21226970001589507,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018700002692639828,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC004_listagem_paginada_padrao",
+      "lineno": 86,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC004_listagem_paginada_padrao",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023989996407181025,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22847800003364682,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000256099971011281,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC005_paginacao_com_offset_no_meio",
+      "lineno": 101,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC005_paginacao_com_offset_no_meio",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002009000163525343,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22335859993472695,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00031479995232075453,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC006_consulta_tipo_por_nome",
+      "lineno": 115,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC006_consulta_tipo_por_nome",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025299994740635157,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.20740280009340495,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001973999897018075,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC007_consulta_habilidade_por_nome",
+      "lineno": 126,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC007_consulta_habilidade_por_nome",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0001642000861465931,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22152170003391802,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002902999985963106,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC008_consulta_movimento_por_nome",
+      "lineno": 136,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC008_consulta_movimento_por_nome",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023490004241466522,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.21214930003043264,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00022109993733465672,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC009_consulta_geracao_valida",
+      "lineno": 147,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC009_consulta_geracao_valida",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00018010009080171585,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.20968169998377562,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020659994333982468,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestCaminhoFeliz::test_TC010_tempo_de_resposta_aceitavel",
+      "lineno": 161,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC010_tempo_de_resposta_aceitavel",
+        "TestCaminhoFeliz",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020680006127804518,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.23367119999602437,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023049989249557257,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC011_id_pokemon_inexistente",
+      "lineno": 181,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC011_id_pokemon_inexistente",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00018940004520118237,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.25623290007933974,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000215600011870265,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC012_nome_pokemon_inexistente",
+      "lineno": 193,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC012_nome_pokemon_inexistente",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019799999427050352,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.24818399990908802,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025070004630833864,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC013_id_zero_fora_do_dominio",
+      "lineno": 203,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC013_id_zero_fora_do_dominio",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00022579997312277555,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2514480999670923,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023399991914629936,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC014_id_negativo",
+      "lineno": 212,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC014_id_negativo",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00018669990822672844,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2708987999940291,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002981999423354864,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC015_paginacao_limit_zero",
+      "lineno": 224,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC015_paginacao_limit_zero",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002106999745592475,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22237859992310405,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002741999924182892,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC016_paginacao_offset_negativo",
+      "lineno": 240,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC016_paginacao_offset_negativo",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00027329998556524515,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.25321960006840527,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002215000567957759,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC017_tipo_pokemon_inexistente",
+      "lineno": 252,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC017_tipo_pokemon_inexistente",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00022219994571059942,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2477225000038743,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025219994131475687,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC018_geracao_alem_do_limite",
+      "lineno": 261,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC018_geracao_alem_do_limite",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019210006576031446,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2544666000176221,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004059999482706189,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC019_limit_com_valor_string",
+      "lineno": 272,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC019_limit_com_valor_string",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003645999822765589,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2146370999980718,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003934999695047736,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_pokeapi.py::TestDadosInvalidos::test_TC020_endpoint_completamente_inexistente",
+      "lineno": 286,
+      "outcome": "passed",
+      "keywords": [
+        "test_TC020_endpoint_completamente_inexistente",
+        "TestDadosInvalidos",
+        "test_pokeapi.py",
+        "tests",
+        "pokeapi_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002676999429240823,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6411411999724805,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003766000736504793,
+        "outcome": "passed"
+      }
+    }
+  ],
   "warnings": [
     {
-      "message": "Monkey-patching ssl after ssl has already been imported may lead to errors, including RecursionError on Python 3.6. It may also silently lead to incorrect behaviour on Python 3.7. Please monkey-patch earlier. See https://github.com/gevent/gevent/issues/1016. Modules that had direct imports (NOT patched): ['urllib3.util.ssl_ (C:\\\\Python310\\\\lib\\\\site-packages\\\\urllib3\\\\util\\\\ssl_.py)', 'urllib3.util (C:\\\\Python310\\\\lib\\\\site-packages\\\\urllib3\\\\util\\\\__init__.py)']. ",
-      "category": "MonkeyPatchWarning",
-      "when": "collect",
-      "filename": "C:\\Python310\\lib\\site-packages\\locust\\__init__.py",
-      "lineno": 16
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
+    },
+    {
+      "message": "Unverified HTTPS request is being made to host 'pokeapi.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings",
+      "category": "InsecureRequestWarning",
+      "when": "runtest",
+      "filename": "C:\\Python310\\lib\\site-packages\\urllib3\\connectionpool.py",
+      "lineno": 1097
     }
   ]
 }
